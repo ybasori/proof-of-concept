@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import DataLayers from "./DataLayers/DataLayers";
 import Overlay from "./Overlay/Overlay";
+import TestingRecaptcha from "./TestingRecaptcha/TestingRecaptcha";
 
 const Home: React.FC = () => {
   return <>Home</>;
@@ -22,9 +23,15 @@ const App: React.FC = () => {
               <li>
                 <Link to="/overlay">Overlay</Link>
               </li>
+              <li>
+                <Link to="/recaptcha">Testing reCaptcha</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
+            <Route path="/recaptcha">
+              <TestingRecaptcha />
+            </Route>
             <Route path="/overlay">
               <Overlay />
             </Route>
