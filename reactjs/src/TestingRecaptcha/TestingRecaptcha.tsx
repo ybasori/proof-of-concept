@@ -9,7 +9,7 @@ const TestingRecaptcha = () => {
       url: "http://localhost:7000/api-developer/v1/yusuf_basori/dsfa/coba-captcha",
       method: "POST",
       headers: {
-        "X-API-Key": "32059d5b-c3cd-4bfa-9825-d6988ec3350f",
+        "X-API-KEY": import.meta.env.VITE_WEBIVERT_API_KEY,
       },
       data: {
         haha: "aaa",
@@ -33,7 +33,15 @@ const TestingRecaptcha = () => {
   }, [show]);
 
   return (
-    <>{show ? <ReCAPTCHA sitekey="client key" onChange={onChange} /> : null},</>
+    <>
+      {show ? (
+        <ReCAPTCHA
+          sitekey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+          onChange={onChange}
+        />
+      ) : null}
+      ,
+    </>
   );
 };
 
