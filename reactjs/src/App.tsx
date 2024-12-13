@@ -9,6 +9,7 @@ const Home: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  asdfasd;
   return (
     <>
       <Router>
