@@ -15,21 +15,24 @@ const center = {
 const imageUrl =
   "https://developers.google.com/maps/documentation/javascript/examples/full/images/talkeetna.png"; // Image URL
 
+const bounds = {
+  north: 37.7799, // Northern latitude
+  south: 37.7699, // Southern latitude
+  east: -122.4094, // Eastern longitude
+  west: -122.4294, // Western longitude
+};
 function Overlay() {
   const { isLoaded } = useJsApiLoader({
     googleMapsApiKey: import.meta.env.VITE_GOOGLE_MAP_API_KEY, // Replace with your API key
   });
 
-  const bounds = {
-    north: 37.7799, // Northern latitude
-    south: 37.7699, // Southern latitude
-    east: -122.4094, // Eastern longitude
-    west: -122.4294, // Western longitude
-  };
-  const onLoad = useCallback((map: google.maps.Map) => {
-    const overlay = new window.google.maps.GroundOverlay(imageUrl, bounds);
-    overlay.setMap(map); // Attach the overlay to the map
-  }, []);
+  const onLoad = useCallback(
+    (map: google.maps.Map) => {
+      const overlay = new window.google.maps.GroundOverlay(imageUrl, bounds);
+      overlay.setMap(map); // Attach the overlay to the map
+    },
+    [bounds]
+  );
 
   return isLoaded ? (
     <GoogleMap
