@@ -1,5 +1,5 @@
-import { GoogleMap, useJsApiLoader, OverlayView } from "@react-google-maps/api";
-import { useCallback, useState } from "react";
+import { GoogleMap, useJsApiLoader } from "@react-google-maps/api";
+import { useCallback } from "react";
 
 const mapContainerStyle = {
   width: "100vh",

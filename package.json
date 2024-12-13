@@ -12,7 +12,7 @@
     "test": "echo 'hello'"
   },
   "lint-staged": {
-    "src/**/*.{ts,tsx}": [
+    "*.{ts,tsx}": [
       "npm run lint"
     ]
   },
