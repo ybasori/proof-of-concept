@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "npx eslint src/**/*.{ts,tsx} --fix",
     "preview": "vite preview",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "echo 'hello'"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
